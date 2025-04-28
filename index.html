@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>EcoNex Consultancy | Environmental Consultancy Services in India</title>
+  <title>EcoNex Consultancy Pvt. Ltd. | Environmental Consultancy Services in India</title>
   <meta name="description" content="Modern animated website for EcoNex Consultancy featuring environmental services, expert team profiles, and sustainable solutions.">
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -59,57 +59,8 @@
     .section-deco {
       position: absolute; left:0; right:0; bottom:0; pointer-events:none; z-index:0;
     }
-    /* For slider, hide scrollbars for PDF export, but always show content on a single page */
-.slider-container {
-  width: 100%;
-  max-width: 650px;
-  margin: 0 auto;
-  position: relative;
-  user-select: none;
-}
-.slider-image {
-  border-radius: 1.2rem;
-  shadow: 2px 6px 24px #0001;
-  width: 100%;
-  height: 320px;
-  object-fit: cover;
-}
-.slider-bar {
-  position: absolute;
-  top: 0; bottom: 0;
-  left: 50%;
-  width: 4px;
-  background: #198a67;
-  z-index: 2;
-  cursor: ew-resize;
-  border-radius: 4px;
-  transition: background 0.2s;
-}
-.slider-label {
-  background: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 0.7rem;
-  color: #198a67;
-  font-weight: 700;
-  font-size: 1rem;
-  position: absolute;
-  top: 1.2rem;
-  z-index: 2;
-  box-shadow: 0 0.75rem 1.5rem #0001;
-  min-width: 90px;
-  text-align: center;
-}
-.slider-label.left {
-  left: 1.5rem;
-}
-.slider-label.right {
-  right: 1.5rem;
-}
-@media (max-width: 640px) {
-  .slider-image {
-    height: 180px;
-  }
-}
+    /* Remove Scrollbars for PDF Export Harmony */
+    ::-webkit-scrollbar { width: 0; background: transparent; }
   </style>
 </head>
 <body class="bg-green-50 text-green-900">
@@ -121,8 +72,6 @@
     <a href="#about" class="hover:text-green-700 font-semibold">About</a>
     <a href="#services" class="hover:text-green-700 font-semibold">Services</a>
     <a href="#choose" class="hover:text-green-700 font-semibold">Why Us</a>
-    <a href="#projects" class="hover:text-green-700 font-semibold">Projects</a>
-    <a href="#cases" class="hover:text-green-700 font-semibold">Case Studies</a>
     <a href="#team" class="hover:text-green-700 font-semibold">Team</a>
     <a href="#testimonials" class="hover:text-green-700 font-semibold">Testimonials</a>
     <a href="#contact" class="hover:text-green-700 font-semibold">Contact</a>
@@ -288,165 +237,480 @@
   </div>
 </section>
 
-<!-- Project Showcase Section -->
-<section id="projects" class="py-20 bg-white">
-  <div class="max-w-6xl mx-auto px-5">
-    <h2 class="text-4xl font-bold text-green-800 mb-6 text-center">Project Showcase</h2>
-    <p class="text-center mb-12 text-green-700 max-w-4xl mx-auto">
-      Our consultancy brings together multidisciplinary expertise spanning environmental engineering, civil engineering, materials science, and data analytics. We combine rigorous academic research with practical engineering solutions to address complex challenges across sectors. Whether you need innovative water treatment technologies, sustainable infrastructure solutions, or advanced material applications, our team delivers evidence-based approaches tailored to your specific needs.
-    </p>
+<!-- Case Studies Section with Interactive Effects -->
+<section id="Projects" class="py-16 md:py-20 bg-gradient-to-b from-white to-green-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="section-title text-4xl font-bold text-green-700 mb-12 text-center flex justify-center items-center">
+        <path d="M2 4v14h14v-6l2-2v10H0V2h10L8 4H2zm10.3-.3l4 4L8 16H4v-4l8.3-8.3zm1.4-1.4L16 0l4 4-2.3 2.3-4-4z"></path>
+      </svg>
+    </h2>
     
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Project Card 1 -->
-      <div class="bg-green-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-        <img src="WTS.jpg" alt="Water Treatment Solutions" class="rounded-xl h-48 w-full object-cover mb-4">
-        <h3 class="font-semibold text-xl text-green-800 mb-3">Water Treatment Solutions</h3>
-        <p class="text-green-700">
-          We offer comprehensive expertise in environmental engineering with a focus on innovative water and wastewater treatment technologies. Our capabilities span from laboratory-scale research to full-scale implementation. Our solutions address diverse water quality challenges for municipalities, educational institutions, and industrial clients, ensuring regulatory compliance while promoting sustainability.
-        </p>
-      </div>
-
-         <!-- Project Card 2 -->
-         <div class="bg-green-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-          <img src="IFRA.jpg" alt="Water Treatment Solutions" class="rounded-xl h-48 w-full object-cover mb-4">
-          <h3 class="font-semibold text-xl text-green-800 mb-3">Sustainable Infrastructure Design & Development</h3>
-          <p class="text-green-700">
-            We provide expert consulting services for sustainable infrastructure projects, combining innovative design approaches with practical implementation strategies. From educational campuses to municipal facilities, our sustainable infrastructure solutions help clients reduce environmental footprints while maximizing operational efficiency.
-          </p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Case Study 1: Integrated River Restoration -->
+      <div class="case-study-card transform transition-all duration-500 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl">
+        <div class="card-content p-0">
+          <!-- Top Section with Image and Overlay -->
+          <div class="relative overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=1200&q=80" 
+                 alt="River Restoration" 
+                 class="card-image w-full h-full object-cover transition-all duration-700">
+            <div class="image-overlay absolute inset-0 bg-gradient-to-t from-green-900 to-transparent opacity-60 transition-opacity duration-500"></div>
+            
+            <!-- Floating Title that moves on hover -->
+            <div class="absolute inset-0 flex flex-col justify-end p-6 transition-transform duration-500">
+              <h3 class="card-title text-2xl font-bold text-white mb-1 transform transition-all duration-500">Integrated River Restoration</h3>
+              <div class="location-badge inline-flex items-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm mb-2 transform transition-all duration-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                Bhopal, India | 2023
+              </div>
+            </div>
+          </div>
+          
+          <!-- Content Section -->
+          <div class="card-details p-6">
+            <p class="card-description text-gray-700 mb-4 transition-all duration-500">
+              Basin-wide hydrological modeling, flood mitigation, and real-time water quality monitoring. Stakeholder engagement and urban green buffers.
+            </p>
+            
+            <!-- Before/After Comparison -->
+            <div class="before-after-container relative h-32 rounded-lg overflow-hidden mb-3">
+              <div class="before-image absolute inset-0">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" 
+                     alt="Before Restoration" 
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-2 left-2 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">Before</div>
+              </div>
+              <div class="after-image absolute inset-0 clip-right transition-all duration-700">
+                <img src="https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=600&q=80" 
+                     alt="After Restoration" 
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-2 right-2 bg-green-600 text-white text-xs px-2 py-1 rounded">After</div>
+              </div>
+              <div class="slider-handle absolute top-0 bottom-0 left-1/2 w-1 bg-white cursor-ew-resize transition-all duration-300"></div>
+            </div>
+            
+            <!-- Hidden Details that appear on hover -->
+            <div class="hidden-details opacity-0 h-0 overflow-hidden transition-all duration-500">
+              <hr class="border-green-100 my-3">
+              <h4 class="font-semibold text-green-800 mb-2">Key Achievements:</h4>
+              <ul class="text-sm text-gray-700 pl-5 list-disc">
+                <li>Reduced flood risk by 65% for vulnerable communities</li>
+                <li>Improved water quality standards compliance to 92%</li>
+                <li>Restored 12km of riparian habitat</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Footer with Reveal Button -->
+          <div class="card-footer bg-gray-50 px-6 py-3 flex justify-between items-center transition-all duration-500">
+            <span class="text-xs text-gray-500">Environmental Restoration</span>
+            <button class="reveal-details flex items-center text-green-700 text-sm font-medium focus:outline-none">
+              <span class="reveal-text">View Details</span>
+              <svg class="reveal-icon w-4 h-4 ml-1 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
         </div>
+      </div>
       
-      <!-- Project Card 3 -->
-      <div class="bg-green-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
-        <img src="AIE.jpg" alt="Data Analytics & AI" class="rounded-xl h-48 w-full object-cover mb-4">
-        <h3 class="font-semibold text-xl text-green-800 mb-3">Data Analytics & AI for Environmental Monitoring</h3>
-        <p class="text-green-700">
-          We leverage advanced statistical methods and artificial intelligence to transform environmental data into actionable insights for decision-makers. Our data analytics solutions enable clients to make informed decisions regarding environmental protection, resource management, and regulatory compliance.
-        </p>
+      <!-- Case Study 2: Sustainable Manufacturing Audit -->
+      <div class="case-study-card transform transition-all duration-500 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl">
+        <div class="card-content p-0">
+          <!-- Top Section with Image and Overlay -->
+          <div class="relative overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Sustainable Manufacturing" 
+                 class="card-image w-full h-full object-cover transition-all duration-700">
+            <div class="image-overlay absolute inset-0 bg-gradient-to-t from-blue-900 to-transparent opacity-60 transition-opacity duration-500"></div>
+            
+            <!-- Floating Title that moves on hover -->
+            <div class="absolute inset-0 flex flex-col justify-end p-6 transition-transform duration-500">
+              <h3 class="card-title text-2xl font-bold text-white mb-1 transform transition-all duration-500">Sustainable Manufacturing Audit</h3>
+              <div class="location-badge inline-flex items-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm mb-2 transform transition-all duration-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                Pune, India | 2022
+              </div>
+            </div>
+          </div>
+          
+          <!-- Content Section -->
+          <div class="card-details p-6">
+            <p class="card-description text-gray-700 mb-4 transition-all duration-500">
+              ESG audit & reporting, zero-waste process redesign, climate risk assessment for a multi-national auto manufacturer. Achieved 40% waste reduction.
+            </p>
+            
+            <!-- Transformation Visualization -->
+            <div class="transformation-container flex items-center justify-between h-20 mb-3">
+              <div class="flex flex-col items-center flex-1">
+                <svg class="w-10 h-10 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-xs mt-1 text-gray-500">Traditional</span>
+              </div>
+              <div class="flex-1 relative h-1 mx-4">
+                <div class="absolute inset-0 bg-gray-200 rounded"></div>
+                <div class="progress-bar absolute left-0 top-0 bottom-0 bg-green-500 rounded transition-all duration-1000"></div>
+                <svg class="progress-arrow absolute -top-3 text-green-500 w-6 h-6 transition-all duration-1000" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                </svg>
+              </div>
+              <div class="flex flex-col items-center flex-1">
+                <svg class="w-10 h-10 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-xs mt-1 text-gray-500">Sustainable</span>
+              </div>
+            </div>
+            
+            <!-- Hidden Details that appear on hover -->
+            <div class="hidden-details opacity-0 h-0 overflow-hidden transition-all duration-500">
+              <hr class="border-green-100 my-3">
+              <h4 class="font-semibold text-green-800 mb-2">Improvements:</h4>
+              <ul class="text-sm text-gray-700 pl-5 list-disc">
+                <li>40% waste reduction through process optimization</li>
+                <li>25% decrease in energy consumption</li>
+                <li>Carbon footprint reduced by 18%</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Footer with Reveal Button -->
+          <div class="card-footer bg-gray-50 px-6 py-3 flex justify-between items-center transition-all duration-500">
+            <span class="text-xs text-gray-500">Industrial Sustainability</span>
+            <button class="reveal-details flex items-center text-green-700 text-sm font-medium focus:outline-none">
+              <span class="reveal-text">View Details</span>
+              <svg class="reveal-icon w-4 h-4 ml-1 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 3: Village Water Supply Resilience -->
+      <div class="case-study-card transform transition-all duration-500 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl">
+        <div class="card-content p-0">
+          <!-- Top Section with Image and Overlay -->
+          <div class="relative overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Village Water Supply" 
+                 class="card-image w-full h-full object-cover transition-all duration-700">
+            <div class="image-overlay absolute inset-0 bg-gradient-to-t from-yellow-900 to-transparent opacity-60 transition-opacity duration-500"></div>
+            
+            <!-- Floating Title that moves on hover -->
+            <div class="absolute inset-0 flex flex-col justify-end p-6 transition-transform duration-500">
+              <h3 class="card-title text-2xl font-bold text-white mb-1 transform transition-all duration-500">Village Water Supply Resilience</h3>
+              <div class="location-badge inline-flex items-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm mb-2 transform transition-all duration-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                Uttar Pradesh, India | 2021
+              </div>
+            </div>
+          </div>
+          
+          <!-- Content Section -->
+          <div class="card-details p-6">
+            <p class="card-description text-gray-700 mb-4 transition-all duration-500">
+              Community-led climate adaptation, sustainable groundwater recharge, and inclusive water governance for 15,000+ people.
+            </p>
+            
+            <!-- Impact Graph -->
+            <div class="impact-graph relative h-20 bg-gray-100 rounded-lg mb-3 overflow-hidden">
+              <div class="impact-bars flex h-full items-end p-2">
+                <div class="impact-bar relative flex-1 mx-1 bg-green-200 rounded-t transition-all duration-700" style="height: 30%;">
+                  <div class="absolute -top-5 left-0 right-0 text-center text-xs text-gray-600">2019</div>
+                </div>
+                <div class="impact-bar relative flex-1 mx-1 bg-green-300 rounded-t transition-all duration-700" style="height: 50%;">
+                  <div class="absolute -top-5 left-0 right-0 text-center text-xs text-gray-600">2020</div>
+                </div>
+                <div class="impact-bar relative flex-1 mx-1 bg-green-400 rounded-t transition-all duration-700" style="height: 70%;">
+                  <div class="absolute -top-5 left-0 right-0 text-center text-xs text-gray-600">2021</div>
+                </div>
+                <div class="impact-bar relative flex-1 mx-1 bg-green-500 rounded-t transition-all duration-700" style="height: 90%;">
+                  <div class="absolute -top-5 left-0 right-0 text-center text-xs text-gray-600">2022</div>
+                </div>
+              </div>
+              <div class="absolute bottom-1 left-2 text-xs text-gray-500">Water Availability %</div>
+            </div>
+            
+            <!-- Hidden Details that appear on hover -->
+            <div class="hidden-details opacity-0 h-0 overflow-hidden transition-all duration-500">
+              <hr class="border-green-100 my-3">
+              <h4 class="font-semibold text-green-800 mb-2">Program Outcomes:</h4>
+              <ul class="text-sm text-gray-700 pl-5 list-disc">
+                <li>Water access improved for 15,000+ villagers</li>
+                <li>45% increase in groundwater recharge</li>
+                <li>7 locally-managed water governance committees established</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Footer with Reveal Button -->
+          <div class="card-footer bg-gray-50 px-6 py-3 flex justify-between items-center transition-all duration-500">
+            <span class="text-xs text-gray-500">Water Resource Management</span>
+            <button class="reveal-details flex items-center text-green-700 text-sm font-medium focus:outline-none">
+              <span class="reveal-text">View Details</span>
+              <svg class="reveal-icon w-4 h-4 ml-1 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 4: Renewable Energy Integration -->
+      <div class="case-study-card transform transition-all duration-500 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-2xl">
+        <div class="card-content p-0">
+          <!-- Top Section with Image and Overlay -->
+          <div class="relative overflow-hidden h-48">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=1200&q=80" 
+                 alt="Renewable Energy" 
+                 class="card-image w-full h-full object-cover transition-all duration-700">
+            <div class="image-overlay absolute inset-0 bg-gradient-to-t from-teal-900 to-transparent opacity-60 transition-opacity duration-500"></div>
+            
+            <!-- Floating Title that moves on hover -->
+            <div class="absolute inset-0 flex flex-col justify-end p-6 transition-transform duration-500">
+              <h3 class="card-title text-2xl font-bold text-white mb-1 transform transition-all duration-500">Renewable Energy Integration</h3>
+              <div class="location-badge inline-flex items-center bg-white bg-opacity-20 backdrop-filter backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm mb-2 transform transition-all duration-500">
+                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path>
+                </svg>
+                Kerala, India | 2024
+              </div>
+            </div>
+          </div>
+          
+          <!-- Content Section -->
+          <div class="card-details p-6">
+            <p class="card-description text-gray-700 mb-4 transition-all duration-500">
+              Deployment of solar mini-grids, carbon tracking, and sustainability training for local institutions and communities.
+            </p>
+            
+            <!-- Impact Metrics -->
+            <div class="metrics-container flex items-center justify-around mt-1 text-green-600 h-20 mb-3">
+              <div class="metric-item flex flex-col items-center transform transition-all duration-500">
+                <svg class="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 01.894 1.79l-1.233.616 1.738 5.42a1 1 0 01-.285 1.05A3.989 3.989 0 0115 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.715-5.349L11 6.477V16h2a1 1 0 110 2H7a1 1 0 110-2h2V6.477L6.237 7.582l1.715 5.349a1 1 0 01-.285 1.05A3.989 3.989 0 015 15a3.989 3.989 0 01-2.667-1.019 1 1 0 01-.285-1.05l1.738-5.42-1.233-.617a1 1 0 01.894-1.788l1.599.799L9 4.323V3a1 1 0 011-1z" clip-rule="evenodd"></path>
+                </svg>
+                <span class="text-xs mt-1 text-gray-500">Solar</span>
+              </div>
+              <div class="metric-item flex flex-col items-center transform transition-all duration-500">
+                <div class="text-lg font-bold">-18%</div>
+                <span class="text-xs mt-1 text-gray-500">CO₂</span>
+              </div>
+              <div class="metric-item flex flex-col items-center transform transition-all duration-500">
+                <div class="text-lg font-bold">4000+</div>
+                <span class="text-xs mt-1 text-gray-500">Users</span>
+              </div>
+            </div>
+            
+            <!-- Hidden Details that appear on hover -->
+            <div class="hidden-details opacity-0 h-0 overflow-hidden transition-all duration-500">
+              <hr class="border-green-100 my-3">
+              <h4 class="font-semibold text-green-800 mb-2">Project Impact:</h4>
+              <ul class="text-sm text-gray-700 pl-5 list-disc">
+                <li>12 solar mini-grids installed serving 4,000+ users</li>
+                <li>18% reduction in carbon footprint for target communities</li>
+                <li>200+ local technicians trained in maintenance</li>
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Footer with Reveal Button -->
+          <div class="card-footer bg-gray-50 px-6 py-3 flex justify-between items-center transition-all duration-500">
+            <span class="text-xs text-gray-500">Renewable Energy</span>
+            <button class="reveal-details flex items-center text-green-700 text-sm font-medium focus:outline-none">
+              <span class="reveal-text">View Details</span>
+              <svg class="reveal-icon w-4 h-4 ml-1 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Add the following CSS to your stylesheet or style tag -->
 <style>
-  /* Optional: Add hover effects */
-  .bg-green-50 {
-    background-color: #f0fff4;
+  /* Section Animation */
+  .section-title {
+    position: relative;
+    display: inline-block;
   }
   
-  .text-green-700 {
-    color: #046c4e;
+  /* Card Hover Transformations */
+  .case-study-card {
+    cursor: pointer;
+    will-change: transform, box-shadow;
   }
   
-  .text-green-800 {
-    color: #03543f;
+  .case-study-card:hover {
+    transform: translateY(-8px);
   }
   
-  /* If you want subtle animations on hover */
-  .bg-green-50:hover {
+  /* Image Effects */
+  .case-study-card:hover .card-image {
+    transform: scale(1.1);
+  }
+  
+  .case-study-card:hover .image-overlay {
+    opacity: 0.8;
+  }
+  
+  /* Title Animation */
+  .case-study-card:hover .card-title {
     transform: translateY(-5px);
-    transition: transform 0.3s ease;
+  }
+  
+  .case-study-card:hover .location-badge {
+    transform: translateY(-5px) scale(1.05);
+  }
+  
+  /* Description Enhancement */
+  .case-study-card:hover .card-description {
+    color: #065f46;
+  }
+  
+  /* Before/After Slider Animation */
+  .clip-right {
+    clip-path: inset(0 0 0 50%);
+  }
+  
+  .case-study-card:hover .clip-right {
+    clip-path: inset(0 0 0 20%);
+  }
+  
+  .case-study-card:hover .slider-handle {
+    left: 20%;
+    background-color: #10b981;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.7);
+  }
+  
+  /* Progress Bar Animation */
+  .progress-bar {
+    width: 0;
+  }
+  
+  .progress-arrow {
+    left: 0;
+  }
+  
+  .case-study-card:hover .progress-bar {
+    width: 100%;
+  }
+  
+  .case-study-card:hover .progress-arrow {
+    left: calc(100% - 24px);
+  }
+  
+  /* Impact Bars Animation */
+  .case-study-card:hover .impact-bar:nth-child(1) {
+    height: 40%;
+    background-color: #10b981;
+  }
+  
+  .case-study-card:hover .impact-bar:nth-child(2) {
+    height: 65%;
+    background-color: #10b981;
+  }
+  
+  .case-study-card:hover .impact-bar:nth-child(3) {
+    height: 85%;
+    background-color: #10b981;
+  }
+  
+  .case-study-card:hover .impact-bar:nth-child(4) {
+    height: 95%;
+    background-color: #10b981;
+  }
+  
+  /* Metrics Animation */
+  .case-study-card:hover .metric-item {
+    transform: scale(1.1);
+  }
+  
+  .case-study-card:hover .metric-item:nth-child(2) {
+    transform: scale(1.2);
+  }
+  
+  /* Hidden Details Animation */
+  .case-study-card:hover .hidden-details {
+    opacity: 1;
+    height: auto;
+    margin-top: 1rem;
+  }
+  
+  /* Footer Reveal Animation */
+  .case-study-card:hover .card-footer {
+    background-color: #f0fdf4;
+  }
+  
+  .case-study-card:hover .reveal-icon {
+    transform: rotate(180deg);
+  }
+  
+  .case-study-card:hover .reveal-text {
+    color: #047857;
   }
 </style>
 
-<!-- Case Studies Section -->
-  <section id="cases" class="py-16 md:py-20 bg-gray-50">
-    <div class="max-w-5xl mx-auto px-6">
-      <h2 class="text-3xl font-montserrat font-bold text-green-700 mb-8 text-center" data-aos="fade-down">
-        <i class="fas fa-clipboard-list mr-2"></i>Case Studies
-      </h2>
-      <!-- Case Study Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 print-gap-10">
-        <!-- Case 1 -->
-        <div class="rounded-lg bg-white shadow p-7 flex flex-col" data-aos="fade-right">
-          <div class="flex items-center mb-6">
-            <div class="case-thumb mr-5 rounded-lg overflow-hidden w-32 h-32 flex-shrink-0 bg-green-50 shadow-md">
-              <img src="https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=320&q=80"
-                alt="River Restoration" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h3 class="text-xl font-bold mb-1 text-green-700">Integrated River Restoration</h3>
-              <div class="text-gray-500 text-sm mb-2">Bhopal, India | 2023</div>
-              <div class="text-base text-gray-600">Basin-wide hydrological modeling, flood mitigation, and real-time water quality monitoring. Stakeholder engagement and urban green buffers.</div>
-            </div>
-          </div>
-          <!-- Before/After slider (use 2 images displayed side-by-side for PDF-compatibility) -->
-          <div class="rounded-lg overflow-hidden flex mb-3">
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=290&q=80" alt="Before Restoration" class="w-1/2 object-cover h-24 md:h-32">
-            <img src="https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=290&q=80" alt="After Restoration" class="w-1/2 object-cover h-24 md:h-32">
-          </div>
-          <div class="flex justify-between text-xs text-gray-500">
-            <span>Before</span>
-            <span>After</span>
-          </div>
-        </div>
-        <!-- Case 2 -->
-        <div class="rounded-lg bg-white shadow p-7 flex flex-col" data-aos="fade-left">
-          <div class="flex items-center mb-6">
-            <div class="case-thumb mr-5 rounded-lg overflow-hidden w-32 h-32 flex-shrink-0 bg-blue-50 shadow-md">
-              <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=320&q=80"
-                alt="Sustainable Industry" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h3 class="text-xl font-bold mb-1 text-green-700">Sustainable Manufacturing Audit</h3>
-              <div class="text-gray-500 text-sm mb-2">Pune, India | 2022</div>
-              <div class="text-base text-gray-600">ESG audit & reporting, zero-waste process redesign, climate risk assessment for a multi-national auto manufacturer. Achieved 40% waste reduction.</div>
-            </div>
-          </div>
-          <!-- Before/After slider (use 2 icons for illustration) -->
-          <div class="flex items-center justify-between mb-3">
-            <div class="flex flex-col items-center flex-1">
-              <i class="fas fa-industry text-4xl text-gray-400"></i>
-              <span class="text-xs mt-1 text-gray-500">Traditional</span>
-            </div>
-            <div class="flex-1 text-center text-green-500 text-2xl">
-              <i class="fas fa-arrow-right"></i>
-            </div>
-            <div class="flex flex-col items-center flex-1">
-              <i class="fas fa-industry text-4xl text-green-500"></i>
-              <span class="text-xs mt-1 text-gray-500">Sustainable</span>
-            </div>
-          </div>
-        </div>
-        <!-- Case 3 -->
-        <div class="rounded-lg bg-white shadow p-7 flex flex-col" data-aos="fade-up">
-          <div class="flex items-center mb-6">
-            <div class="case-thumb mr-5 rounded-lg overflow-hidden w-32 h-32 flex-shrink-0 bg-yellow-50 shadow-md">
-              <img src="https://images.unsplash.com/photo-1499346030926-9a72daac6c63?auto=format&fit=crop&w=320&q=80"
-                alt="Village Water" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h3 class="text-xl font-bold mb-1 text-green-700">Village Water Supply Resilience</h3>
-              <div class="text-gray-500 text-sm mb-2">Uttar Pradesh, India | 2021</div>
-              <div class="text-base text-gray-600">Community-led climate adaptation, sustainable groundwater recharge, and inclusive water governance for 15,000+ people.</div>
-            </div>
-          </div>
-          <!-- Simple impact bar chart -->
-          <canvas id="case3Chart" width="320" height="80" class="w-full h-20 mb-3"></canvas>
-        </div>
-        <!-- Case 4 -->
-        <div class="rounded-lg bg-white shadow p-7 flex flex-col" data-aos="fade-up" data-aos-delay="100">
-          <div class="flex items-center mb-6">
-            <div class="case-thumb mr-5 rounded-lg overflow-hidden w-32 h-32 flex-shrink-0 bg-teal-50 shadow-md">
-              <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=320&q=80"
-                alt="Renewable Energy" class="w-full h-full object-cover">
-            </div>
-            <div>
-              <h3 class="text-xl font-bold mb-1 text-green-700">Renewable Energy Integration</h3>
-              <div class="text-gray-500 text-sm mb-2">Kerala, India | 2024</div>
-              <div class="text-base text-gray-600">Deployment of solar mini-grids, carbon tracking, and sustainability training for local institutions and communities.</div>
-            </div>
-          </div>
-          <!-- Sustainability metrics with FontAwesome icons -->
-          <div class="flex items-center justify-around mt-1 text-[#065f46] text-xl">
-            <span class="flex flex-col items-center"><i class="fas fa-solar-panel"></i><span class="text-xs text-gray-500">Solar</span></span>
-            <span class="flex flex-col items-center"><i class="fas fa-chart-line"></i><span class="text-xs text-gray-500">CO₂ -18%</span></span>
-            <span class="flex flex-col items-center"><i class="fas fa-users"></i><span class="text-xs text-gray-500">4000+ users</span></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<script>
+  // Interactive functionality for the case study cards
+  document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.case-study-card');
+    
+    cards.forEach(card => {
+      // Before/After slider functionality
+      const sliderHandle = card.querySelector('.slider-handle');
+      const afterImage = card.querySelector('.after-image');
+      
+      if (sliderHandle && afterImage) {
+        card.querySelector('.before-after-container').addEventListener('mousemove', function(e) {
+          const rect = this.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width;
+          
+          // Constrain x between 0.1 and 0.9
+          const clipX = Math.max(0.1, Math.min(0.9, x));
+          
+          // Set the clip path and handle position
+          afterImage.style.clipPath = `inset(0 0 0 ${clipX * 100}%)`;
+          sliderHandle.style.left = `${clipX * 100}%`;
+        });
+      }
+      
+      // Click to reveal details
+      const revealButton = card.querySelector('.reveal-details');
+      const hiddenDetails = card.querySelector('.hidden-details');
+      
+      if (revealButton && hiddenDetails) {
+        revealButton.addEventListener('click', function(e) {
+          e.stopPropagation();
+          
+          // Toggle the hidden details visibility
+          if (hiddenDetails.style.height === 'auto') {
+            hiddenDetails.style.opacity = '0';
+            hiddenDetails.style.height = '0';
+            revealButton.querySelector('.reveal-icon').style.transform = 'rotate(0deg)';
+            revealButton.querySelector('.reveal-text').textContent = 'View Details';
+          } else {
+            hiddenDetails.style.opacity = '1';
+            hiddenDetails.style.height = 'auto';
+            revealButton.querySelector('.reveal-icon').style.transform = 'rotate(180deg)';
+            revealButton.querySelector('.reveal-text').textContent = 'Hide Details';
+          }
+        });
+      }
+    });
+  });
+</script>
+
 
   <!-- Creative Team Section with Advanced Effects -->
 <section id="team" class="py-16 md:py-20 bg-gradient-to-b from-white to-green-50">
@@ -479,7 +743,7 @@
           
           <!-- Text Content with Animation -->
           <h3 class="text-2xl font-bold mb-1 text-green-800 transition-all duration-500">Mohammad Obaid Qamar</h3>
-          <div class="degree text-green-700 font-bold mb-3 transition-all duration-500 transform">PhD, Water Resources & Environmental Engineering <br>Yeungnam University, South Korea</div>
+          <div class="degree text-green-700 font-bold mb-3 transition-all duration-500 transform">PhD, Water Resources & Environmental Engineering, <br>Yeungnam University, South Korea</div>
           <p class="bio text-gray-700 mb-5 transition-all duration-500">Expert in hydrological modeling, integrated water management, river basin planning, and pollution control. Published researcher and lead consultant for major projects across South Asia and Middle East.</p>
           
           <!-- Interactive Expertise Icons -->
@@ -526,7 +790,7 @@
           
           <!-- Text Content with Animation -->
           <h3 class="text-2xl font-bold mb-1 text-green-800 transition-all duration-500">Muhammad Zaid Qamar</h3>
-          <div class="degree text-green-700 font-bold mb-3 transition-all duration-500 transform">PhD, Environmental Resources & Sustainable Development <br>University of Naples Parthenope, Italy</div>
+          <div class="degree text-green-700 font-bold mb-3 transition-all duration-500 transform">PhD, Environmental Resources & Sustainable Development, <br>University of Naples Parthenope, Italy</div>
           <p class="bio text-gray-700 mb-5 transition-all duration-500">Specialist in sustainability audit, SDG strategy, climate risk, and environmental impact assessment. Led green development projects for NGOs, industry, and governments in Europe and Asia.</p>
           
           <!-- Interactive Expertise Icons -->
