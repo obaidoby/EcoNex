@@ -288,30 +288,66 @@
   </div>
 </section>
 
-<!-- Project Showcase (Placeholder) -->
-<section id="projects" class="relative py-20 bg-white">
+<!-- Project Showcase Section -->
+<section id="projects" class="py-20 bg-white">
   <div class="max-w-6xl mx-auto px-5">
-    <h2 class="text-3xl md:text-4xl font-bold text-green-900 mb-6 text-center fade-in-up">Project Showcase</h2>
-    <p class="text-center mb-8 text-green-800 fade-in-up fade-in-delay-1">Our consultancy brings together multidisciplinary expertise spanning environmental engineering, civil engineering, materials science, and data analytics. We combine rigorous academic research with practical engineering solutions to address complex challenges across sectors. Whether you need innovative water treatment technologies, sustainable infrastructure solutions, or advanced material applications, our team delivers evidence-based approaches tailored to your specific needs. </p>
+    <h2 class="text-4xl font-bold text-green-800 mb-6 text-center">Project Showcase</h2>
+    <p class="text-center mb-12 text-green-700 max-w-4xl mx-auto">
+      Our consultancy brings together multidisciplinary expertise spanning environmental engineering, civil engineering, materials science, and data analytics. We combine rigorous academic research with practical engineering solutions to address complex challenges across sectors. Whether you need innovative water treatment technologies, sustainable infrastructure solutions, or advanced material applications, our team delivers evidence-based approaches tailored to your specific needs.
+    </p>
+    
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-green-50 rounded-2xl p-6 shadow fade-in-left">
-        <img src="WTS.jpg" alt="Urban Water Project" class="rounded-xl h-32 w-full object-cover mb-4">
-        <h4 class="font-semibold text-lg mb-2">Water Treatment Solutions</h4>
-        <p class="text-green-800 text-sm">We offer comprehensive expertise in environmental engineering with a focus on innovative water and wastewater treatment technologies. Our capabilities span from laboratory-scale research to full-scale implementation.Our solutions address diverse water quality challenges for municipalities, educational institutions, and industrial clients, ensuring regulatory compliance while promoting sustainability.</p>
+      <!-- Project Card 1 -->
+      <div class="bg-green-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <img src="WTS.jpg" alt="Water Treatment Solutions" class="rounded-xl h-48 w-full object-cover mb-4">
+        <h3 class="font-semibold text-xl text-green-800 mb-3">Water Treatment Solutions</h3>
+        <p class="text-green-700">
+          We offer comprehensive expertise in environmental engineering with a focus on innovative water and wastewater treatment technologies. Our capabilities span from laboratory-scale research to full-scale implementation. Our solutions address diverse water quality challenges for municipalities, educational institutions, and industrial clients, ensuring regulatory compliance while promoting sustainability.
+        </p>
       </div>
-      <div class="bg-green-50 rounded-2xl p-6 shadow fade-in-up">
-        <img src="SIDD.jpg" alt="Corporate ESG Strategy" class="rounded-xl h-32 w-full object-cover mb-4">
-        <h4 class="font-semibold text-lg mb-2">Sustainable Infrastructure Design & Development</h4>
-        <p class="text-green-800 text-sm">We provide expert consulting services for sustainable infrastructure projects, combining innovative design approaches with practical implementation strategies. From educational campuses to municipal facilities, our sustainable infrastructure solutions help clients reduce environmental footprints while maximizing operational efficiency.</p>
-      </div>
-      <div class="bg-green-50 rounded-2xl p-6 shadow fade-in-right">
-        <img src="AIE.jpg" alt="Climate-Resilient Agriculture" class="rounded-xl h-32 w-full object-cover mb-4">
-        <h4 class="font-semibold text-lg mb-2">Data Analytics & AI for Environmental Monitoring</h4>
-        <p class="text-green-800 text-sm">We leverage advanced statistical methods and artificial intelligence to transform environmental data into actionable insights for decision-makers.Our data analytics solutions enable clients to make informed decisions regarding environmental protection, resource management, and regulatory compliance.</p>
+
+         <!-- Project Card 2 -->
+         <div class="bg-green-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+          <img src="IFRA.jpg" alt="Water Treatment Solutions" class="rounded-xl h-48 w-full object-cover mb-4">
+          <h3 class="font-semibold text-xl text-green-800 mb-3">Sustainable Infrastructure Design & Development</h3>
+          <p class="text-green-700">
+            We provide expert consulting services for sustainable infrastructure projects, combining innovative design approaches with practical implementation strategies. From educational campuses to municipal facilities, our sustainable infrastructure solutions help clients reduce environmental footprints while maximizing operational efficiency.
+          </p>
+        </div>
+      
+      <!-- Project Card 3 -->
+      <div class="bg-green-50 rounded-2xl p-6 shadow-md hover:shadow-lg transition-shadow">
+        <img src="AIE.jpg" alt="Data Analytics & AI" class="rounded-xl h-48 w-full object-cover mb-4">
+        <h3 class="font-semibold text-xl text-green-800 mb-3">Data Analytics & AI for Environmental Monitoring</h3>
+        <p class="text-green-700">
+          We leverage advanced statistical methods and artificial intelligence to transform environmental data into actionable insights for decision-makers. Our data analytics solutions enable clients to make informed decisions regarding environmental protection, resource management, and regulatory compliance.
+        </p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Add the following CSS to your stylesheet or style tag -->
+<style>
+  /* Optional: Add hover effects */
+  .bg-green-50 {
+    background-color: #f0fff4;
+  }
+  
+  .text-green-700 {
+    color: #046c4e;
+  }
+  
+  .text-green-800 {
+    color: #03543f;
+  }
+  
+  /* If you want subtle animations on hover */
+  .bg-green-50:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+  }
+</style>
 
 <!-- Case Studies Section -->
   <section id="cases" class="py-16 md:py-20 bg-gray-50">
