@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -11,6 +13,16 @@
   <link href="https://cdn.jsdelivr.net/npm/@fontsource-variable/raleway@3.3.1/index.min.css" rel="stylesheet">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <!-- Add EmailJS SDK -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+<!-- Initialize EmailJS -->
+<script type="text/javascript">
+  (function() {
+    // Replace with your actual EmailJS user ID from the dashboard
+    emailjs.init("OsyA8hLyMPo9J9NOV");
+  })();
+</script>
   <style>
     html {
       scroll-behavior: smooth;
@@ -130,12 +142,12 @@
 </nav>
 
 <!-- Hero Banner -->
-<section id="hero" class="pt-24 min-h-screen flex flex-col justify-center items-center relative parallax-bg" style="background-image:url('Banner.jpg');">
+<section id="hero" class="pt-24 min-h-screen flex flex-col justify-center items-center relative parallax-bg" style="background-image:url('/Users/obaid/Documents/Untitled\ design-9.jpg');">
   <div class="absolute inset-0 bg-green-900 bg-opacity-30"></div>
   <div class="relative z-10 text-center px-3 md:px-0 fade-in-up">
     <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4 tracking-tight animate-bounce">Nurturing Sustainability for a Greener India</h1>
     <p class="text-lg md:text-2xl text-green-50 mb-8">EcoNex Consultancy Pvt. Ltd. provides environmental, water resources, and sustainable development solutions, empowering your growth — responsibly.</p>
-    <a href="#contact" class="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow transition duration-200 text-lg">Request a Consultation</a>
+    <a href="#contact" class="inline-block bg-[#0096B6] hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full shadow transition duration-200 text-lg">Request a Consultation</a>
   </div>
   <!-- Animated Leaves SVG Decoration -->
   <div class="absolute bottom-0 w-full hidden md:block section-deco">
@@ -147,7 +159,7 @@
 </section>
 
 <!-- About Section -->
-<section id="about" class="relative py-20 bg-green-100" style="background-image:url('aboutP.jpg');">
+<section id="about" class="relative py-20 bg-green-100" style="background-image:url('/Users/obaid/Documents/photo3.jpg');">
   <div class="max-w-6xl mx-auto px-5 flex flex-col-reverse md:flex-row items-center">
     <div class="w-full md:w-1/2 fade-in-left">
       <h2 class="text-3xl md:text-4xl text-green-900 font-bold mb-4">About EcoNex Consultancy</h2>
@@ -422,7 +434,7 @@
         <!-- Team Member 1 -->
         <div class="bg-gray-100 rounded-xl flex-1 px-7 py-8 text-center shadow group" data-aos="fade-right">
           <img class="mx-auto rounded-full border-4 border-green-600 w-36 h-36 object-cover team-img mb-5" 
-            src="TP1.jpg"
+            src="/Users/obaid/Documents/photo.JPEG"
             alt="Mohammad Obaid Qamar">
           <h3 class="text-xl font-bold mb-1"> Mohammad Obaid Qamar</h3>
           <div class="text-green-700 font-bold mb-2">PhD, Water Resources & Environmental Engineering, Yeungnam University, South Korea</div>
@@ -436,7 +448,7 @@
         <!-- Team Member 2 -->
         <div class="bg-gray-100 rounded-xl flex-1 px-7 py-8 text-center shadow group" data-aos="fade-left">
           <img class="mx-auto rounded-full border-4 border-green-600 w-36 h-36 object-cover team-img mb-5"
-            src="TP2.jpg"
+            src="/users/obaid/Documents/Photo2.jpg"
             alt="Muhammad Zaid Qamar">
           <h3 class="text-xl font-bold mb-1"> Muhammad Zaid Qamar</h3>
           <div class="text-green-700 font-bold mb-2">PhD, Environmental Resources & Sustainable Development, University of Naples Parthenope, Italy</div>
@@ -503,7 +515,7 @@
         </div>
       </div>
       <!-- Contact Form -->
-      <form class="flex-1 bg-gray-50 rounded-xl shadow-md px-7 py-7" autocomplete="off" data-aos="fade-left" onsubmit="contactSuccess(event)">
+      <form id="contact-form" class="flex-1 bg-gray-50 rounded-xl shadow-md px-7 py-7" autocomplete="off" data-aos="fade-left">
         <div class="mb-5">
           <label class="block font-medium mb-2 text-gray-700" for="name"><i class="fas fa-user mr-1"></i>Your Name</label>
           <input required id="name" name="name" type="text" class="block w-full border border-gray-300 rounded py-2 px-4 focus:border-green-500" maxlength="60">
@@ -516,10 +528,10 @@
           <label class="block font-medium mb-2 text-gray-700" for="message"><i class="fas fa-comment mr-1"></i>Message</label>
           <textarea required id="message" name="message" rows="4" class="block w-full border border-gray-300 rounded py-2 px-4 focus:border-green-500"></textarea>
         </div>
-        <button type="submit" class="w-full bg-green-600 text-white py-3 rounded font-bold text-lg hover:bg-green-700 transition">
+        <button type="submit" id="submit-btn" class="w-full bg-green-600 text-white py-3 rounded font-bold text-lg hover:bg-green-700 transition">
           Send Message <i class="fas fa-paper-plane ml-2"></i>
         </button>
-        <p id="contact-success" class="hidden mt-4 text-green-700 font-medium">Thank you, your message has been sent!</p>
+        <div id="form-status" class="mt-4 text-center"></div>
       </form>
     </div>
   </div>
@@ -588,6 +600,55 @@
     }
     animateElements();
     window.addEventListener('scroll', animateElements);
+  });
+</script>
+<!-- EmailJS submission script -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const formStatus = document.getElementById('form-status');
+    
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      // Show sending state
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin ml-2"></i>';
+      submitBtn.disabled = true;
+      formStatus.innerHTML = '';
+      
+      // Prepare parameters
+      const templateParams = {
+        from_name: document.getElementById('name').value,
+        reply_to: document.getElementById('email').value,
+        message: document.getElementById('message').value
+      };
+      
+      // Send email using EmailJS
+      emailjs.send('service_a36g3da', 'template_utfsu0w', templateParams)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          
+          // Show success message
+          formStatus.innerHTML = '<p class="text-green-600 font-medium">Thank you! Your message has been sent successfully.</p>';
+          contactForm.reset();
+          
+          // Reset button
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        })
+        .catch(function(error) {
+          console.log('FAILED...', error);
+          
+          // Show error message
+          formStatus.innerHTML = '<p class="text-red-600 font-medium">Failed to send message. Please try again or email us directly at obaidqamar21@gmail.com</p>';
+          
+          // Reset button
+          submitBtn.innerHTML = originalBtnText;
+          submitBtn.disabled = false;
+        });
+    });
   });
 </script>
 </body>
