@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>ECONEX-AI | Environmental Consulting</title>
+  <title>ECONEX-AI | Environmental Consultancy Services in India</title>
   <meta name="description" content="Modern animated website for ECONEX-AI Consultancy featuring environmental services, expert team profiles, and sustainable solutions.">
   <!-- Tailwind CSS -->
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -983,6 +983,704 @@
     });
   });
 </script>
+
+<!-- Interactive SDG Section -->
+<section id="sdg-section" class="py-20 relative overflow-hidden bg-gradient-to-br from-green-50 via-white to-blue-50">
+  <!-- Decorative Background Elements -->
+  <div class="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-green-100 to-transparent opacity-50"></div>
+  <div class="absolute bottom-0 right-0 w-full h-64 bg-gradient-to-t from-blue-100 to-transparent opacity-50"></div>
+  <div class="sdg-floating-circles"></div>
+  
+  <div class="max-w-6xl mx-auto px-6 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-12">
+      <div class="inline-block px-6 py-2 bg-gradient-to-r from-green-500 to-blue-500 rounded-full text-white text-sm font-semibold mb-4">GLOBAL GOALS</div>
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Commitment to Sustainable Development</h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">At EcoNex, we align our work with the UN Sustainable Development Goals to create measurable impact across environmental, social, and economic dimensions.</p>
+    </div>
+    
+    <!-- SDG Interactive Globe -->
+    <div class="flex flex-col lg:flex-row items-center mb-16">
+      <div class="w-full lg:w-1/2 mb-8 lg:mb-0">
+        <div class="sdg-globe-container relative">
+          <div class="sdg-globe-wrapper h-96 relative">
+            <div class="sdg-globe bg-gradient-to-br from-blue-400 to-green-400 rounded-full shadow-xl"></div>
+            
+            <!-- SDG Icons around the globe -->
+            <div class="sdg-icon-container"></div>
+            
+            <!-- Globe shine effect -->
+            <div class="globe-shine absolute top-0 left-0 w-full h-full rounded-full"></div>
+          </div>
+          
+          <div class="sdg-connection-lines"></div>
+        </div>
+      </div>
+      
+      <div class="w-full lg:w-1/2 lg:pl-12">
+        <div id="sdg-info-display" class="bg-white rounded-2xl shadow-xl p-8 transition-all duration-500">
+          <div class="flex items-center mb-4">
+            <div id="current-sdg-icon" class="w-16 h-16 rounded-lg flex items-center justify-center mr-4">
+              <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg" class="w-12 h-12" alt="SDG 6">
+            </div>
+            <h3 id="current-sdg-title" class="text-2xl font-bold text-blue-800">Clean Water and Sanitation</h3>
+          </div>
+          
+          <div id="sdg-description" class="text-gray-700 mb-6">
+            <p>Ensure availability and sustainable management of water and sanitation for all.</p>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3">Progress</h4>
+            <div id="sdg-contribution" class="text-gray-700">
+              <p>Through our water resource management projects, we've helped improve access to clean water for over 15,000 people across rural India. Our watershed management programs have enhanced water security in drought-prone regions.</p>
+            </div>
+          </div>
+          
+          <div class="mb-6">
+            <h4 class="text-lg font-semibold text-gray-800 mb-3">Challenges</h4>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="impact-metric bg-blue-50 rounded-xl p-4 flex flex-col items-center text-center">
+                <div class="text-3xl font-bold text-blue-600 mb-1">12.2 billion</div>
+                <div class="text-sm text-gray-600">people still lack safely managed drinking water </div>
+              </div>
+              <div class="impact-metric bg-green-50 rounded-xl p-4 flex flex-col items-center text-center">
+                <div class="text-3xl font-bold text-green-600 mb-1">3.5 billion</div>
+                <div class="text-sm text-gray-600">people lack safely managed sanitation</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center">
+            <a href="#contact" class="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800 transition-colors">
+              <span>Partner with us</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+            </a>
+            
+            <div class="sdg-navigation flex space-x-2">
+              <button id="prev-sdg" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </button>
+              <button id="next-sdg" class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center hover:bg-blue-200 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SDG Goals Grid -->
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-9 gap-3 mb-10">
+      <!-- SDG Icons in Grid - clicking these will update the main display -->
+      <div class="sdg-grid-item active" data-sdg="6">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-06.jpg" alt="SDG 6" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Clean Water</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="7">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-07.jpg" alt="SDG 7" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Clean Energy</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="11">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-11.jpg" alt="SDG 11" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Sustainable Cities</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="12">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-12.jpg" alt="SDG 12" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Responsible Consumption</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="13">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-13.jpg" alt="SDG 13" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Climate Action</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="14">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-14.jpg" alt="SDG 14" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Life Below Water</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="15">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-15.jpg" alt="SDG 15" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Life on Land</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="17">
+        <div class="sdg-grid-icon bg-white p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer">
+          <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-17.jpg" alt="SDG 17" class="w-full">
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">Partnerships</div>
+      </div>
+      
+      <div class="sdg-grid-item" data-sdg="all">
+        <div class="sdg-grid-icon bg-gradient-to-br from-green-400 to-blue-500 p-3 rounded-lg shadow hover:shadow-md transition-all cursor-pointer flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </div>
+        <div class="text-xs text-center mt-1 font-medium">All Goals</div>
+      </div>
+    </div>
+    
+    <!-- Progress Indicators -->
+    <div class="relative bg-white rounded-2xl shadow-lg p-8 mb-12 overflow-hidden">
+      <div class="absolute right-0 top-0 w-64 h-64 bg-gradient-to-bl from-green-100 to-transparent -mr-20 -mt-20 rounded-full"></div>
+      
+      <h3 class="text-2xl font-bold text-gray-800 mb-6 relative z-10">Our SDG Progress</h3>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+        <!-- Progress Bar 1 -->
+        <div class="progress-container">
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-gray-700">Water Quality Improvement</span>
+            <span class="text-sm font-medium text-green-600">78%</span>
+          </div>
+          <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+            <div class="progress-bar h-full rounded-full bg-gradient-to-r from-blue-400 to-green-400" data-percent="78"></div>
+          </div>
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>SDG 6.3</span>
+            <span>Target: 100% by 2030</span>
+          </div>
+        </div>
+        
+        <!-- Progress Bar 2 -->
+        <div class="progress-container">
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-gray-700">Renewable Energy Adoption</span>
+            <span class="text-sm font-medium text-green-600">45%</span>
+          </div>
+          <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+            <div class="progress-bar h-full rounded-full bg-gradient-to-r from-yellow-400 to-orange-400" data-percent="45"></div>
+          </div>
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>SDG 7.2</span>
+            <span>Target: 60% by 2030</span>
+          </div>
+        </div>
+        
+        <!-- Progress Bar 3 -->
+        <div class="progress-container">
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-gray-700">Sustainable Urban Development</span>
+            <span class="text-sm font-medium text-green-600">62%</span>
+          </div>
+          <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+            <div class="progress-bar h-full rounded-full bg-gradient-to-r from-red-400 to-pink-400" data-percent="62"></div>
+          </div>
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>SDG 11.3</span>
+            <span>Target: 85% by 2030</span>
+          </div>
+        </div>
+        
+        <!-- Progress Bar 4 -->
+        <div class="progress-container">
+          <div class="flex justify-between mb-2">
+            <span class="text-sm font-medium text-gray-700">Climate Resilience</span>
+            <span class="text-sm font-medium text-green-600">54%</span>
+          </div>
+          <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+            <div class="progress-bar h-full rounded-full bg-gradient-to-r from-teal-400 to-green-400" data-percent="54"></div>
+          </div>
+          <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>SDG 13.1</span>
+            <span>Target: 80% by 2030</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Call to Action -->
+    <div class="text-center">
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">Join Our Sustainability Journey</h3>
+      <p class="text-gray-600 max-w-2xl mx-auto mb-6">Partner with EcoNex to advance your organization's sustainability goals while contributing to the global SDG agenda.</p>
+      <a href="#contact" class="inline-block px-8 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+        Start Your SDG Journey
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* SDG Section Styling */
+.sdg-floating-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.sdg-floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.15;
+  animation: float 15s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-150px) rotate(360deg);
+  }
+}
+
+/* SDG Globe Styling */
+.sdg-globe-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.sdg-globe-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  perspective: 800px;
+}
+
+.sdg-globe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  animation: rotate 20s infinite linear;
+  background: radial-gradient(circle at 30% 30%, #4ade80, #3b82f6);
+  box-shadow: 
+    0 0 60px rgba(79, 209, 197, 0.3),
+    inset 0 0 60px rgba(255, 255, 255, 0.2);
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateY(0) rotateX(15deg);
+  }
+  100% {
+    transform: rotateY(360deg) rotateX(15deg);
+  }
+}
+
+.globe-shine {
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), transparent 70%);
+  opacity: 0.7;
+}
+
+.sdg-icon-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.sdg-globe-icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-left: -20px;
+  margin-top: -20px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.sdg-globe-icon:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.sdg-globe-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.sdg-connection-lines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.connection-line {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  transform-origin: 0 0;
+  opacity: 0;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* SDG Grid Styling */
+.sdg-grid-item {
+  transition: transform 0.3s ease;
+}
+
+.sdg-grid-item:hover {
+  transform: translateY(-5px);
+}
+
+.sdg-grid-item.active .sdg-grid-icon {
+  box-shadow: 0 0 0 3px #10b981, 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Progress Bar Animation */
+.progress-bar {
+  width: 0;
+  transition: width 1.5s ease-in-out;
+}
+
+/* Add animation for the info display */
+#sdg-info-display {
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+#sdg-info-display.changing {
+  transform: translateX(20px);
+  opacity: 0;
+}
+
+/* Impact metrics animation */
+.impact-metric {
+  position: relative;
+  overflow: hidden;
+}
+
+.impact-metric::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -100%;
+  }
+  20%, 100% {
+    left: 100%;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sdg-globe-wrapper {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .progress-container {
+    margin-bottom: 1rem;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Create floating background circles
+  const floatingCircles = document.querySelector('.sdg-floating-circles');
+  const colors = ['#4ade80', '#3b82f6', '#06b6d4', '#10b981', '#8b5cf6'];
+  
+  for (let i = 0; i < 15; i++) {
+    const circle = document.createElement('div');
+    circle.classList.add('sdg-floating-circle');
+    
+    // Random properties
+    const size = Math.random() * 100 + 50;
+    const colorIdx = Math.floor(Math.random() * colors.length);
+    
+    circle.style.width = `${size}px`;
+    circle.style.height = `${size}px`;
+    circle.style.backgroundColor = colors[colorIdx];
+    circle.style.left = `${Math.random() * 100}%`;
+    circle.style.top = `${Math.random() * 100}%`;
+    circle.style.animationDuration = `${Math.random() * 20 + 10}s`;
+    circle.style.animationDelay = `${Math.random() * 5}s`;
+    
+    floatingCircles.appendChild(circle);
+  }
+  
+  // Create SDG icons around the globe
+  const iconContainer = document.querySelector('.sdg-icon-container');
+  const connectionLines = document.querySelector('.sdg-connection-lines');
+  const sdgData = [
+    { id: 6, color: '#26bde2', title: 'Clean Water and Sanitation', 
+      description: 'Ensure access to affordable, reliable, sustainable and modern energy for all.',
+      contribution: 'Efforts like the UN-Water Acceleration Framework aim to speed up progress through better data, financing, innovation, and governance. Yet, urgent action is needed to meet 2030 targets. In 2023, data from 91,000 water bodies in 120 countries showed only 56% had good water quality. Agriculture and untreated wastewater remain major threats.',
+      metrics: [
+        { value: '2.2 billion', label: 'people still lack safely managed drinking water' },
+        { value: '3.5 billion', label: 'people lack safely managed sanitation,' }
+      ]
+    },
+    { id: 7, color: '#fcc30b', title: 'Affordable and Clean Energy',
+      description: 'Ensure access to affordable, reliable, sustainable and modern energy for all.',
+      contribution: 'Global renewable energy capacity is growing rapidly, especially in electricity. Yet access gaps remain. In 2022, 685 million people still lacked electricity—10 million more than in 2021—marking the first increase in a decade. Meanwhile, 2.1 billion still rely on polluting fuels for cooking. Without faster progress, 660 million may remain without electricity by 2030.',
+      metrics: [
+        { value: '685 million', label: 'people still lack access to electricity' },
+        { value: '2.1 billion', label: 'people still rely on polluting cooking fuels' }
+      ]
+    },
+    { id: 11, color: '#f99d26', title: 'Sustainable Cities and Communities',
+      description: 'Make cities inclusive, safe, resilient and sustainable.',
+      contribution: 'Urbanization is accelerating, with over half the world population now residing in cities—a figure projected to reach 70% by 2050. However, challenges persist. In 2022, approximately 1.1 billion people lived in slums or slum-like conditions, accounting for about 24.8% of the urban population. This marks an increase of 130 million since 2015, with significant concentrations in Central and Southern Asia, Eastern and South-Eastern Asia, and sub-Saharan Africa.',
+      metrics: [
+        { value: '1.1 billion', label: 'people live in slums or informal settlements' },
+        { value: 'Only 50%', label: 'of urban residents have convenient access to public transportation' }
+      ]
+    },
+    { id: 12, color: '#cf8d2a', title: 'Responsible Consumption and Production',
+      description: 'Ensure sustainable consumption and production patterns.',
+      contribution: 'Efforts to promote sustainable consumption and production are advancing, with over 480 policy instruments supporting this shift reported by 62 countries and the European Union between 2019 and 2022. Corporate sustainability reporting has tripled since the beginning of the SDG period, indicating growing private sector engagement. However, the global economy remains only 8.6% circular, highlighting the need for accelerated action to decouple economic growth from resource use and minimize environmental impacts.',
+      metrics: [
+        { value: '8.6%', label: 'of the global economy is circular, underscoring significant inefficiencies in resource use.' },
+        { value: '14%', label: 'of the world food is lost before reaching the retail level' }
+      ]
+    },
+    { id: 13, color: '#48773e', title: 'Climate Action',
+      description: 'Take urgent action to combat climate change and its impacts.',
+      contribution: 'The global community is significantly off track in meeting the Paris Agreements goal of limiting warming to 1.5°C. Current emission reduction pledges, if fully implemented, would still result in a temperature rise of approximately 1.8°C, leaving a substantial emissions gap that necessitates a 42% cut in emissions by 2030 to stay within the 1.5°C threshold . The World Meteorological Organization reports an 80% likelihood that at least one year between 2024 and 2028 will temporarily exceed the 1.5°C limit . Despite these challenges, there are positive developments: the European Union achieved a 24.5% reduction in net emissions between 1990 and 2022 , and renewable energy sources, particularly solar and wind, are becoming increasingly cost-effective and widely adopted .',
+      metrics: [
+        { value: '3.1°C', label: 'Projected global temperature increase by the end of the century' },
+        { value: '1% vs. 66%', label: 'The richest 1% of the global population produce as much carbon pollution as the poorest two-thirds, highlighting significant climate justice disparities .' }
+      ]
+    },
+    { id: 14, color: '#0a97d9', title: 'Life Below Water',
+      description: 'Conserve and sustainably use the oceans, seas and marine resources.',
+      contribution: 'Oceans cover over 70% of the Earth surface and are vital to global ecosystems and economies. However, human activities have altered 66% of the marine environment, leading to significant challenges such as eutrophication, acidification, declining fish stocks, rising temperatures, and widespread pollution. These issues threaten marine biodiversity and the livelihoods of over 3 billion people who depend on ocean resources.',
+      metrics: [
+        { value: '35.4%', label: 'of global fish stocks were overfished in 2019' },
+        { value: '30–50%', label: 'of critical marine habitats have been lost due to human industrialization,' }
+      ]
+    },
+    { id: 15, color: '#56c02b', title: 'Life on Land',
+      description: 'Protect, restore and promote sustainable use of terrestrial ecosystems.',
+      contribution: 'Global biodiversity continues to face significant threats. The Red List Index, which measures changes in extinction risk across species, has deteriorated by 12% between 1993 and 2024, with a 4% decline since 2015. Over 44,000 species, or 28% of the nearly 160,000 assessed, are currently threatened, including 70% of cycads and 41% of amphibians. Amphibians are particularly impacted by climate change, habitat conversion, and invasive fungal diseases.',
+      metrics: [
+        { value: '12%', label: 'Decline in the Red List Index from 1993 to 2024' },
+        { value: '28%', label: 'Of assessed species are currently threatened with extinction.' }
+      ]
+    },
+    { id: 17, color: '#19486a', title: 'Partnerships for the Goals',
+      description: 'Strengthen the means of implementation and revitalize the global partnership for sustainable development.',
+      contribution: 'SDG 17 emphasizes the necessity of global partnerships to achieve sustainable development. While there have been efforts to foster collaborations between governments, the private sector, and civil society, progress remains uneven. The aftermath of the COVID-19 pandemic, escalating conflicts, and geopolitical tensions have further strained these partnerships, highlighting the need for renewed commitment and innovative approaches to global cooperation.',
+      metrics: [
+        { value: 'Only 17%', label: 'of SDG targets are on track' },
+        { value: '$500 billion', label: 'annual shortfall in SDG financing for developing countries' }
+      ]
+    }
+  ];
+  
+  // Place SDG icons around the globe
+  sdgData.forEach((sdg, index) => {
+    const angle = (index * (360 / sdgData.length)) * (Math.PI / 180);
+    const radius = 140;
+    
+    const x = 150 + radius * Math.cos(angle);
+    const y = 150 + radius * Math.sin(angle);
+    const z = 20 * Math.sin(angle);
+    
+    // Create icon
+    const icon = document.createElement('div');
+    icon.classList.add('sdg-globe-icon');
+    icon.dataset.sdg = sdg.id;
+    icon.style.left = `${x}px`;
+    icon.style.top = `${y}px`;
+    icon.style.transform = `translateZ(${z}px)`;
+    
+    const img = document.createElement('img');
+    img.src = `https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-${String(sdg.id).padStart(2, '0')}.jpg`;
+    img.alt = `SDG ${sdg.id}`;
+    
+    icon.appendChild(img);
+    iconContainer.appendChild(icon);
+    
+    // Create connection line
+    const line = document.createElement('div');
+    line.classList.add('connection-line');
+    line.style.top = '150px';
+    line.style.left = '150px';
+    line.style.width = `${radius}px`;
+    line.style.transform = `rotate(${angle * (180 / Math.PI)}deg)`;
+    line.style.animationDelay = `${index * 0.5}s`;
+    connectionLines.appendChild(line);
+    
+    // Add click event
+    icon.addEventListener('click', () => {
+      updateSDGDisplay(sdg.id);
+    });
+  });
+  
+  // Initialize progress bars
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const progressObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const percent = bar.dataset.percent;
+        setTimeout(() => {
+          bar.style.width = `${percent}%`;
+        }, 200);
+      }
+    });
+  }, { threshold: 0.2 });
+  
+  progressBars.forEach(bar => {
+    progressObserver.observe(bar);
+  });
+  
+  // SDG display functions
+  function updateSDGDisplay(sdgId) {
+    // Find the SDG data
+    const sdg = sdgData.find(item => item.id === parseInt(sdgId));
+    if (!sdg) return;
+    
+    // First add changing class for animation
+    const display = document.getElementById('sdg-info-display');
+    display.classList.add('changing');
+    
+    // Update grid item active state
+    document.querySelectorAll('.sdg-grid-item').forEach(item => {
+      item.classList.remove('active');
+    });
+    document.querySelector(`.sdg-grid-item[data-sdg="${sdgId}"]`).classList.add('active');
+    
+    // After animation starts, update content
+    setTimeout(() => {
+      // Update icon
+      document.getElementById('current-sdg-icon').innerHTML = `
+        <img src="https://sdgs.un.org/sites/default/files/goals/E_SDG_Icons-${String(sdg.id).padStart(2, '0')}.jpg" class="w-12 h-12" alt="SDG ${sdg.id}">
+      `;
+      
+      // Update title and description
+      document.getElementById('current-sdg-title').textContent = sdg.title;
+      document.getElementById('sdg-description').innerHTML = `<p>${sdg.description}</p>`;
+      document.getElementById('sdg-contribution').innerHTML = `<p>${sdg.contribution}</p>`;
+      
+      // Update metrics
+      const metricsContainer = document.querySelector('.grid.grid-cols-2');
+      metricsContainer.innerHTML = '';
+      
+      sdg.metrics.forEach(metric => {
+        const metricEl = document.createElement('div');
+        metricEl.className = 'impact-metric bg-blue-50 rounded-xl p-4 flex flex-col items-center text-center';
+        metricEl.innerHTML = `
+          <div class="text-3xl font-bold text-blue-600 mb-1">${metric.value}</div>
+          <div class="text-sm text-gray-600">${metric.label}</div>
+        `;
+        metricsContainer.appendChild(metricEl);
+      });
+      
+      // Remove changing class to animate back in
+      display.classList.remove('changing');
+    }, 300);
+  }
+  
+  // Add click handlers for SDG grid items
+  document.querySelectorAll('.sdg-grid-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const sdgId = item.dataset.sdg;
+      if (sdgId === 'all') {
+        // Show special "all goals" view
+        // This could be implemented to show a summary of all goals
+      } else {
+        updateSDGDisplay(sdgId);
+      }
+    });
+  });
+  
+  // Add click handlers for next/prev buttons
+  document.getElementById('next-sdg').addEventListener('click', () => {
+    const current = document.querySelector('.sdg-grid-item.active');
+    const currentId = parseInt(current.dataset.sdg);
+    const nextId = currentId === 17 ? 6 : (currentId === 15 ? 17 : currentId + 1);
+    updateSDGDisplay(nextId);
+  });
+  
+  document.getElementById('prev-sdg').addEventListener('click', () => {
+    const current = document.querySelector('.sdg-grid-item.active');
+    const currentId = parseInt(current.dataset.sdg);
+    const prevId = currentId === 6 ? 17 : (currentId === 17 ? 15 : currentId - 1);
+    updateSDGDisplay(prevId);
+  });
+  
+  // Initialize with SDG 6
+  updateSDGDisplay(6);
+  
+  // Add 3D tilt effect to the SDG globe container on mouse move
+  const globeContainer = document.querySelector('.sdg-globe-container');
+  globeContainer.addEventListener('mousemove', (e) => {
+    const { left, top, width, height } = globeContainer.getBoundingClientRect();
+    const x = (e.clientX - left) / width;
+    const y = (e.clientY - top) / height;
+    
+    const tiltX = (y - 0.5) * 20;
+    const tiltY = (0.5 - x) * 20;
+    
+    document.querySelector('.sdg-globe-wrapper').style.transform = `perspective(1000px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`;
+  });
+  
+  globeContainer.addEventListener('mouseleave', () => {
+    document.querySelector('.sdg-globe-wrapper').style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
+  });
+  
+  // Optional: Add shine effect that follows cursor
+  globeContainer.addEventListener('mousemove', (e) => {
+    const { left, top, width, height } = globeContainer.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    
+    document.querySelector('.globe-shine').style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(255, 255, 255, 0.4), transparent 70%)`;
+  });
+});
+</script>
+
 
 <!-- Contact Section -->
 <section id="contact" class="py-16 md:py-20 bg-white">
