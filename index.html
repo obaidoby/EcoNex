@@ -2533,6 +2533,240 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', animateElements);
   });
 </script>
+
+<!-- Floating Chat Bot -->
+<div id="eco-chatbot" class="fixed bottom-6 right-6 z-50">
+  <!-- Chat Button -->
+  <button id="chat-button" class="bg-gradient-to-r from-green-600 to-green-700 w-16 h-16 rounded-full shadow-lg flex items-center justify-center hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none">
+    <i class="fas fa-comments text-white text-2xl"></i>
+  </button>
+  
+  <!-- Chat Window (Hidden by Default) -->
+  <div id="chat-window" class="hidden absolute bottom-20 right-0 w-80 md:w-96 bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300">
+    <!-- Chat Header -->
+    <div class="bg-gradient-to-r from-green-600 to-green-700 px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center">
+        <i class="fas fa-leaf text-white mr-2"></i>
+        <h3 class="text-white font-semibold">ECONEX-AI Assistant</h3>
+      </div>
+      <button id="close-chat" class="text-white hover:text-green-200 focus:outline-none">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <!-- Chat Messages Container -->
+    <div id="chat-messages" class="p-4 h-80 overflow-y-auto">
+      <!-- Bot Welcome Message -->
+      <div class="bot-message mb-4 flex">
+        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
+          <i class="fas fa-robot text-green-600"></i>
+        </div>
+        <div class="message-bubble bg-gray-100 rounded-lg p-3 max-w-[85%]">
+          <p class="text-gray-800">Hello! I'm ECONEX-AI's virtual assistant. How can I help you with environmental consulting today?</p>
+        </div>
+      </div>
+      
+      <!-- Messages will be added here dynamically -->
+    </div>
+    
+    <!-- Chat Input Area -->
+    <div class="border-t border-gray-200 p-3">
+      <form id="chat-form" class="flex items-center">
+        <input 
+          type="text" 
+          id="chat-input" 
+          placeholder="Type your question here..." 
+          class="flex-1 border border-gray-300 rounded-l-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+        >
+        <button 
+          type="submit" 
+          class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-r-lg focus:outline-none transition-colors"
+        >
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+      <div class="text-xs text-gray-500 mt-2 text-center">
+        Ask about our services, projects, or environmental solutions
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Chat Functionality -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const chatButton = document.getElementById('chat-button');
+  const chatWindow = document.getElementById('chat-window');
+  const closeChat = document.getElementById('close-chat');
+  const chatForm = document.getElementById('chat-form');
+  const chatInput = document.getElementById('chat-input');
+  const chatMessages = document.getElementById('chat-messages');
+  
+  // Common environmental questions and answers
+  const faqs = {
+    'hello': 'Hello! How can I assist you with environmental consulting today?',
+    'hi': 'Hi there! How can I help you with your environmental needs?',
+    'services': 'We offer Water Resources Management, Environmental Impact Assessment, Sustainable Development Solutions, Waste Management, Climate Change Services, and Environmental Compliance. Which area would you like to know more about?',
+    'water': 'Our water resources management services include Hydrology & Hydraulic Modeling, Watershed Planning, Flood Risk Assessment, and Water Quality Monitoring & Restoration. Would you like to schedule a consultation?',
+    'climate': 'Our climate change services include Greenhouse Gas Inventory, Carbon Footprint Assessment, Renewable Energy Integration, and Climate Resilience Planning. Would you like to learn more about a specific service?',
+    'locations': 'We have offices in Aligarh (India), Naples (Italy), Jazan (Saudi Arabia), and Daegu (South Korea). Our global presence allows us to offer contextual solutions worldwide.',
+    'team': 'Our team is led by Dr. Mohammad Obaid Qamar and Dr. Muhammad Zaid Qamar, experts in water resources, environmental engineering, and sustainable development with global research experience.',
+    'contact': 'You can reach us at econexai.consulting@gmail.com or call +91 94574 48635. Would you like us to contact you directly?',
+    'project': 'We\'d be happy to discuss your project! Please provide some details about your environmental needs, and we can schedule a consultation.',
+    'cost': 'Our consulting fees vary based on project scope, complexity, and duration. We offer customized proposals after an initial consultation. Would you like to schedule a free discovery call?',
+    'ai': 'We leverage artificial intelligence for environmental data analytics, predictive modeling, and sustainable solution optimization. Our AI capabilities enhance decision-making and improve environmental outcomes.',
+    'sdg': 'We align our work with the UN Sustainable Development Goals, particularly focusing on SDG 6 (Clean Water), SDG 7 (Clean Energy), SDG 11 (Sustainable Cities), SDG 13 (Climate Action), SDG 14 (Life Below Water), and SDG 15 (Life on Land).'
+  };
+  
+  // Toggle chat window visibility
+  chatButton.addEventListener('click', function() {
+    chatWindow.classList.toggle('hidden');
+    if (!chatWindow.classList.contains('hidden')) {
+      chatInput.focus();
+    }
+  });
+  
+  // Close chat window
+  closeChat.addEventListener('click', function() {
+    chatWindow.classList.add('hidden');
+  });
+  
+  // Handle form submission
+  chatForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const userMessage = chatInput.value.trim();
+    if (userMessage === '') return;
+    
+    // Add user message to chat
+    addMessage('user', userMessage);
+    
+    // Clear input field
+    chatInput.value = '';
+    
+    // Process message and respond (with slight delay for realism)
+    setTimeout(() => {
+      const botResponse = getBotResponse(userMessage);
+      addMessage('bot', botResponse);
+      
+      // Auto-scroll to the bottom
+      chatMessages.scrollTop = chatMessages.scrollHeight;
+    }, 600);
+  });
+  
+  // Add message to the chat window
+  function addMessage(sender, text) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('flex', 'mb-4');
+    
+    if (sender === 'user') {
+      messageDiv.classList.add('justify-end');
+      messageDiv.innerHTML = `
+        <div class="message-bubble bg-green-600 text-white rounded-lg p-3 max-w-[85%]">
+          <p>${text}</p>
+        </div>
+        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center ml-2 flex-shrink-0">
+          <i class="fas fa-user text-green-600"></i>
+        </div>
+      `;
+    } else {
+      messageDiv.innerHTML = `
+        <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
+          <i class="fas fa-robot text-green-600"></i>
+        </div>
+        <div class="message-bubble bg-gray-100 rounded-lg p-3 max-w-[85%]">
+          <p class="text-gray-800">${text}</p>
+        </div>
+      `;
+    }
+    
+    chatMessages.appendChild(messageDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+  
+  // Get bot response based on user input
+  function getBotResponse(userInput) {
+    const input = userInput.toLowerCase();
+    
+    // Check for keywords in the input
+    for (const [keyword, response] of Object.entries(faqs)) {
+      if (input.includes(keyword)) {
+        return response;
+      }
+    }
+    
+    // Default response if no keyword matches
+    return "Thanks for your message! For detailed information about this topic, please email us at econexai.consulting@gmail.com or fill out our contact form. Would you like to know about our services, projects, or team?";
+  }
+  
+  // Typing indicator animation (optional enhancement)
+  function showTypingIndicator() {
+    const typingDiv = document.createElement('div');
+    typingDiv.classList.add('flex', 'mb-4', 'typing-indicator');
+    typingDiv.innerHTML = `
+      <div class="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-2 flex-shrink-0">
+        <i class="fas fa-robot text-green-600"></i>
+      </div>
+      <div class="message-bubble bg-gray-100 rounded-lg p-3">
+        <div class="flex space-x-1">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+      </div>
+    `;
+    chatMessages.appendChild(typingDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return typingDiv;
+  }
+  
+  // Add typing animation CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes typingAnimation {
+      0% { opacity: 0.3; transform: translateY(0); }
+      50% { opacity: 1; transform: translateY(-3px); }
+      100% { opacity: 0.3; transform: translateY(0); }
+    }
+    
+    .typing-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #10b981;
+      border-radius: 50%;
+      animation: typingAnimation 1s infinite;
+    }
+    
+    .typing-dot:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .typing-dot:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    
+    #chat-window {
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    #chat-button {
+      box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
+    }
+    
+    .message-bubble {
+      position: relative;
+      animation: fadeIn 0.3s ease-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  `;
+  document.head.appendChild(style);
+});
+</script>
 </body>
 </html>
 
