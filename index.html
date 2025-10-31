@@ -1734,6 +1734,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+
 <!-- Enhanced Contact Section with Interactive Elements -->
 <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-green-50 via-white to-blue-50 relative overflow-hidden">
   <!-- Animated Background Elements -->
@@ -1874,103 +1875,111 @@ document.addEventListener('DOMContentLoaded', function() {
         <h3 class="text-3xl font-bold text-gray-800 mb-6">Send Us a Message</h3>
         <p class="text-gray-600 mb-8">Fill out the form below, and our team will get back to you soon.</p>
         
-        <form id="contact-form" class="space-y-6" autocomplete="off">
-          <!-- Name Input with floating label and animation -->
-          <div class="form-field-container relative">
-            <input 
-              id="name" 
-              type="text" 
-              required 
-              class="form-field w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 transition-all duration-300 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200"
-            />
-            <label for="name" class="form-field-label absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none">
-              <i class="fas fa-user mr-2"></i>Your Full Name
-            </label>
-          </div>
-          
-          <!-- Email Input with floating label and animation -->
-          <div class="form-field-container relative">
-            <input 
-              id="email" 
-              type="email" 
-              required 
-              class="form-field w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 transition-all duration-300 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200"
-            />
-            <label for="email" class="form-field-label absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none">
-              <i class="fas fa-envelope mr-2"></i>Email Address
-            </label>
-          </div>
-          
-          <!-- Subject Dropdown with custom styling -->
-          <div class="relative">
-            <select id="subject" class="w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 appearance-none focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 text-gray-700">
-              <option value="" disabled selected>Select Your Interest</option>
-              <option value="water">Water Resources Management</option>
-              <option value="impact">Environmental Impact Assessment</option>
-              <option value="sustainable">Sustainable Development</option>
-              <option value="waste">Waste Management</option>
-              <option value="climate">Climate Change Services</option>
-              <option value="compliance">Environmental Compliance</option>
-              <option value="other">Other Inquiry</option>
-            </select>
-            <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
-              <i class="fas fa-chevron-down"></i>
-            </div>
-          </div>
-          
-          <!-- Message Textarea with animated focus effects -->
-          <div class="form-field-container relative">
-            <textarea 
-              id="message" 
-              rows="4" 
-              required 
-              class="form-field w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 transition-all duration-300 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200"
-            ></textarea>
-            <label for="message" class="form-field-label absolute left-4 top-3 text-gray-500 transition-all duration-300 pointer-events-none">
-              <i class="fas fa-comment mr-2"></i>Your Message
-            </label>
-          </div>
-          
-          <!-- File Upload with custom styling -->
-          <div class="file-upload-container relative bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center transition-all duration-300 hover:border-green-500 hover:bg-green-50">
-            <input type="file" id="file-upload" class="hidden" />
-            <label for="file-upload" class="flex flex-col items-center justify-center cursor-pointer">
-              <div class="mb-2 text-green-600">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data" class="space-y-6">
+    
+    <!-- Hidden Access Key -->
+    <input type="hidden" name="access_key" value="f6d1f6d0-7132-4140-9fc2-451f83477327">
+
+    <!-- Subject for your email inbox -->
+    <input type="hidden" name="subject" value="New Contact Form Submission - ECONEX-AI">
+    
+    <!-- Name Input -->
+    <div class="form-field-container relative">
+        <input 
+            id="name" 
+            type="text" 
+            name="name"
+            required 
+            class="form-field w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200"
+        />
+        <label for="name" class="form-field-label absolute left-4 top-3 text-gray-500 transition-all">
+            <i class="fas fa-user mr-2"></i>Your Full Name
+        </label>
+    </div>
+
+    <!-- Email Input -->
+    <div class="form-field-container relative">
+        <input 
+            id="email" 
+            type="email" 
+            name="email"
+            required 
+            class="form-field w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200"
+        />
+        <label for="email" class="form-field-label absolute left-4 top-3 text-gray-500 transition-all">
+            <i class="fas fa-envelope mr-2"></i>Email Address
+        </label>
+    </div>
+
+    <!-- Dropdown / Subject -->
+    <div class="relative">
+        <select 
+            id="interest" 
+            name="interest" 
+            required 
+            class="w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 appearance-none focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200 text-gray-700"
+        >
+            <option value="" disabled selected>Select Your Interest</option>
+            <option value="Water Resources Management">Water Resources Management</option>
+            <option value="Environmental Impact Assessment">Environmental Impact Assessment</option>
+            <option value="Sustainable Development">Sustainable Development</option>
+            <option value="Waste Management">Waste Management</option>
+            <option value="Climate Change Services">Climate Change Services</option>
+            <option value="Environmental Compliance">Environmental Compliance</option>
+            <option value="Other Inquiry">Other Inquiry</option>
+        </select>
+        <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-gray-500">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+
+    <!-- Message -->
+    <div class="form-field-container relative">
+        <textarea 
+            id="message" 
+            name="message" 
+            rows="4" 
+            required 
+            class="form-field w-full bg-gray-50 border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:border-green-500 focus:ring-2 focus:ring-green-200"
+        ></textarea>
+        <label for="message" class="form-field-label absolute left-4 top-3 text-gray-500 transition-all">
+            <i class="fas fa-comment mr-2"></i>Your Message
+        </label>
+    </div>
+
+    <!-- File Upload -->
+    <div class="file-upload-container relative bg-gray-50 border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-green-500 hover:bg-green-50 transition-all">
+        <input type="file" name="attachment" id="file-upload" class="hidden">
+        <label for="file-upload" class="flex flex-col items-center justify-center cursor-pointer">
+            <div class="mb-2 text-green-600">
                 <i class="fas fa-cloud-upload-alt text-3xl"></i>
-              </div>
-              <span class="text-sm font-medium text-gray-700">Drag & drop files or <span class="text-green-600">browse</span></span>
-              <span class="text-xs text-gray-500 mt-1">Attach relevant files (optional)</span>
-            </label>
-            <div id="file-name-display" class="mt-3 text-sm text-gray-600 hidden">
-              <i class="fas fa-file-alt mr-2"></i><span>filename.pdf</span>
             </div>
-          </div>
-          
-          <!-- Submit Button with hover effects and animation -->
-          <div class="mt-8">
-            <button type="submit" class="submit-button w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50">
-              <span class="flex items-center justify-center">
+            <span class="text-sm font-medium text-gray-700">Drag & drop files or <span class="text-green-600">browse</span></span>
+            <span class="text-xs text-gray-500 mt-1">Attach relevant files (optional)</span>
+        </label>
+        <div id="file-name-display" class="mt-3 text-sm text-gray-600 hidden">
+            <i class="fas fa-file-alt mr-2"></i><span>filename</span>
+        </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="mt-8">
+        <button type="submit" class="submit-button w-full bg-gradient-to-r from-green-600 to-green-700 hover:from-green-500 hover:to-green-600 text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <span class="flex items-center justify-center">
                 <span>Send Message</span>
                 <i class="fas fa-paper-plane ml-2 send-icon"></i>
-              </span>
-            </button>
-          </div>
-          
-          <!-- Success message that appears after form submission -->
-          <div id="success-message" class="hidden mt-6 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded animate-fade-in-up">
-            <div class="flex items-center">
-              <div class="success-checkmark mr-3">
-                <i class="fas fa-check-circle text-green-500 text-xl"></i>
-              </div>
-              <div>
-                <p class="font-medium">The messaging service is temporarily unavailable.</p>
-                <p class="text-sm">Please email us at: econexai.consulting@gmail.com</p>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
+            </span>
+        </button>
     </div>
+
+    <!-- Success Response -->
+    <div id="success-message" class="hidden mt-6 bg-green-100 border-l-4 border-green-600 text-green-700 p-4 rounded animate-fade-in-up">
+        <div class="flex items-center">
+            <i class="fas fa-check-circle text-green-600 text-xl mr-3"></i>
+            <p class="font-medium">🎉 Message Sent Successfully! We will contact you soon.</p>
+        </div>
+    </div>
+</form>
     
     <!-- FAQ Accordion Section -->
     <div class="mt-20">
@@ -2782,6 +2791,24 @@ document.addEventListener('DOMContentLoaded', function() {
   document.head.appendChild(style);
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const contactForm = document.getElementById("contact-form");
+    const successMessage = document.getElementById("success-message");
+
+    contactForm.addEventListener("submit", function (e) {
+        // ✅ Allow Web3Forms to submit automatically (no preventDefault here)
+        successMessage.classList.remove("hidden");
+
+        // Scroll user to success message location
+        window.scrollTo({
+            top: contactForm.offsetTop - 100,
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
 </body>
 </html>
+
 
