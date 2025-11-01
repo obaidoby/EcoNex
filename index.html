@@ -2796,14 +2796,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contact-form");
     const successMessage = document.getElementById("success-message");
 
-    contactForm.addEventListener("submit", function (e) {
-        // ✅ Allow Web3Forms to submit automatically (no preventDefault here)
+    contactForm.addEventListener("submit", function () {
         successMessage.classList.remove("hidden");
 
-        // Scroll user to success message location
         window.scrollTo({
             top: contactForm.offsetTop - 100,
-            behavior: 'smooth'
+            behavior: "smooth"
         });
     });
 });
