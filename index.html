@@ -2795,19 +2795,36 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contact-form");
     const successMessage = document.getElementById("success-message");
+    const submitButton = contactForm.querySelector('button[type="submit"]');
 
     contactForm.addEventListener("submit", function () {
-        successMessage.classList.remove("hidden");
 
-        window.scrollTo({
-            top: contactForm.offsetTop - 100,
-            behavior: "smooth"
-        });
+        // Disable button to prevent multiple clicks
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Sending...';
+
+        // Let Web3Forms send the form normally (no e.preventDefault)
+
+        // After a slight delay, show success message on screen
+        setTimeout(() => {
+            successMessage.classList.remove("hidden");
+
+            submitButton.innerHTML = '<span><i class="fas fa-check mr-2"></i>Message Sent</span>';
+            submitButton.classList.remove('from-green-600', 'to-green-700');
+            submitButton.classList.add('from-green-500', 'to-green-600');
+
+            // Scroll to success message
+            window.scrollTo({
+                top: successMessage.offsetTop - 100,
+                behavior: 'smooth'
+            });
+        }, 800);
     });
 });
 </script>
 </body>
 </html>
+
 
 
 
